@@ -20,6 +20,7 @@ public class Picture {
     private Square window;
     private Triangle roof;
     private Circle sun;
+    private boolean terrefixe;
 
     /**
      * Constructor for objects of class Picture
@@ -50,7 +51,7 @@ public class Picture {
         roof.makeVisible();
 
         sun = new Circle();
-        sun.changeColor("yellow");
+        sun.changeColor("blue");
         sun.moveHorizontal(180);
         sun.moveVertical(-10);
         sun.changeSize(60);
@@ -81,6 +82,16 @@ public class Picture {
             roof.changeColor("green");
             sun.changeColor("yellow");
         }
+    }
+    /** 
+     * methode permet au soleil de coucher si la terre et fixe
+     *
+     */
+    public void coucher(){
+   // if(terrefixe){
+    sun.slowMoveVertical(300);
+   // }
+    
     }
 
 }

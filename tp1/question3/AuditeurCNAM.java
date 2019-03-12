@@ -31,6 +31,13 @@ public class AuditeurCNAM {
         this.prenom = prenom;
         this.matricule = matricule;
     }
+     
+     public String getNom() {
+            return nom;
+        }
+     public String getPrenom() {
+            return prenom;
+        }
 
     /**
      * le login au Cnam : 6 premières lettres du nom suivies de la première
@@ -45,16 +52,25 @@ public class AuditeurCNAM {
      *         homonymes...
      */
     public String login() {
-        return "";// à compléter
+          String s = getNom();
+        String p = getPrenom();
+        while(s.length()==6){
+            s+="_";
+            s+=p.charAt(0);
+            }
+            for(int i=0;i<s.length();i++){
+            if((s.charAt(i))== '-'){
+            s.replaceAll("-", "_");}}
+        
+        return s.toLowerCase();// à compléter
     }
-
     /**
      * Lecture du nom de l'auditeur.
      * 
      * @return son nom
      */
     public String nom() {
-        return null;// à compléter
+        return nom;// à compléter
     }
 
     /**
@@ -63,7 +79,7 @@ public class AuditeurCNAM {
      * @return son prénom
      */
     public String prenom() {
-        return null;// à compléter
+        return prenom;// à compléter
     }
 
     /**
@@ -72,7 +88,7 @@ public class AuditeurCNAM {
      * @return son matricule
      */
     public String matricule() {
-        return null;// à compléter
+        return matricule;// à compléter
     }
 
     /**
