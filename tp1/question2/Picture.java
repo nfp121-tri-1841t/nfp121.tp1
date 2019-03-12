@@ -31,6 +31,7 @@ public class Picture {
 
     /**
      * Draw this picture.
+     *
      */
     public void draw() {
         wall = new Square();
